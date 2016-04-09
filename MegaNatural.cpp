@@ -69,7 +69,22 @@ long long MegaNatural::tenDivisiorCt()
 }
 
 //Описание: вычитание натурального, умноженного на цифру
-void MegaNatural::subNatMulK(const MegaNatural &ob, long long k) {}
+void MegaNatural::subNatMulK(const MegaNatural &ob, long long k) {
+	MegaNatural a = ob;
+	MegaNatural result = 0;
+
+	a.mulByK(k);
+
+	result = a - nums;
+	if (result <= 0)
+	{
+		std::cout << "Error! Result is negative.";
+	}
+	else
+	{
+		nums = result;
+	}
+}
 
 int MegaNatural::firstDigOfDivByNat(const MegaNatural &ob)
 {
